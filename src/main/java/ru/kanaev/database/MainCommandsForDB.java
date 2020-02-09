@@ -58,7 +58,7 @@ public class MainCommandsForDB {
             int rows = preparedStatement.executeUpdate();
             System.out.printf("%d rows added", rows);*/
 
-            int maxPrice = 20000;
+            /*int maxPrice = 20000;
             String sql1 = "SELECT * FROM products WHERE Price < ?";
             PreparedStatement preparedStatement1 = connection.prepareStatement(sql1);
             preparedStatement1.setInt(1,maxPrice);
@@ -69,10 +69,10 @@ public class MainCommandsForDB {
                 int price1 = resultSet.getInt("Price");
 
                 System.out.printf("%d. %s - %d \n", id, name1, price1);
-            }
+            }*/
 
             // т.к. не в блоке ресурсов try, можно закрывать в блоке finally
-            preparedStatement1.close();
+            //preparedStatement1.close();
             statement.close();
         } catch (SQLException | IOException e) {
             System.out.println("Connection failed...");

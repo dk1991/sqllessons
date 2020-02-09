@@ -9,9 +9,9 @@ public class DBWorker {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "Jumper1202";
 
-    private static final String INSERT_NEW = "INSERT INTO dish VALUES(?,?,?,?,?,?,?)";
-    private static final String GET_ALL = "SELECT * FROM dish";
-    private static final String DELET = "DELETE FROM dish WHERE id = ?";
+//    private static final String INSERT_NEW = "INSERT INTO dish VALUES(?,?,?,?,?,?,?)";
+//    private static final String GET_ALL = "SELECT * FROM dish";
+//    private static final String DELET = "DELETE FROM dish WHERE id = ?";
 
     public static void main(String[] args) {
         try {
@@ -62,13 +62,13 @@ public class DBWorker {
 
 
                 // PREPARED statement - скомпилированные запросы
-                PreparedStatement preparedStatement = connection.prepareStatement(DELET);
+                /*PreparedStatement preparedStatement = connection.prepareStatement(DELET);
                 preparedStatement.setInt(1,2);
                 int result = preparedStatement.executeUpdate(); // выполнить запрос и вернуть число записей (см ниже)
-                System.out.println(result); // число записей на которые сработал запрос (в данном случае удаленных)
+                System.out.println(result); // число записей на которые сработал запрос (в данном случае удаленных)*/
 
 
-                preparedStatement = connection.prepareStatement(INSERT_NEW);
+               /* preparedStatement = connection.prepareStatement(INSERT_NEW);
                 // в INSERT_NEW стоят ? вместо данных, вместо них надо вставлять свои данные:
                 preparedStatement.setInt(1,2);
                 preparedStatement.setString(2,"Title");
@@ -77,10 +77,10 @@ public class DBWorker {
                 preparedStatement.setBoolean(5, false);
                 preparedStatement.setDate(6, new Date(Calendar.getInstance().getTimeInMillis()));
                 preparedStatement.setBlob(7, new FileInputStream("./src/main/resources/vodoley.png"));
-                preparedStatement.execute(); // выполнить запрос
+                preparedStatement.execute(); // выполнить запрос*/
 
 
-                preparedStatement = connection.prepareStatement(GET_ALL);
+                /*preparedStatement = connection.prepareStatement(GET_ALL);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
                     int id = resultSet.getInt("id");
@@ -93,9 +93,9 @@ public class DBWorker {
 
                     System.out.println("id: " + id + " title: " + title + " description: " + description + " rating: " + rating
                     + " published: " + published + " date: " + date + " icon length: " + icon.length);
-                }
+                }*/
 
-                preparedStatement.close(); // закрываем наш PreparedStatement, можно делать в блоке finally или НЕ закрывать,
+                //preparedStatement.close(); // закрываем наш PreparedStatement, можно делать в блоке finally или НЕ закрывать,
                 // если открывали в блоке ресурсов try (PreparedStatement preparedStatement = connection.prepareStatement(DELET);) {}
 
 
